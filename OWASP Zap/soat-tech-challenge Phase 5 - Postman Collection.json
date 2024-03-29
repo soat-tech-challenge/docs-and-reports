@@ -1,0 +1,245 @@
+{
+	"info": {
+		"_postman_id": "a11148e4-ccd6-44a1-bf3b-397257f5e4c0",
+		"name": "soat-tech-challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9443919"
+	},
+	"item": [
+		{
+			"name": "Get Products",
+			"protocolProfileBehavior": {
+				"followOriginalHttpMethod": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8002/order/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8002",
+					"path": [
+						"order",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Products By Category",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8002/order/products/by-category?categoria=Lanche",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8002",
+					"path": [
+						"order",
+						"products",
+						"by-category"
+					],
+					"query": [
+						{
+							"key": "categoria",
+							"value": "Lanche"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Checkout",
+			"protocolProfileBehavior": {
+				"followOriginalHttpMethod": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJEaW5vQ2hpZXNhLmdpdGh1Yi5pbyIsInN1YiI6IjZjYWIwNzFiLWQyNGMtNDA2Yi05ZTJmLThhYTQ1Yjc5MWJmMiIsImlhdCI6MTcwNjQ2NDY3NCwicHJvcFkiOiJrczVsbTEwZWUwODljMnl1bGM3a2tpIn0.XiDbq-Pn0H44ublgggvQw1zU_S-KLg86zqUkw6j4DtRyVNcsWoZgjub-eH6mu2w5-VBibE0IjH4MyVfGXRg2QRCUG60BuILVDw68m4n6Q3KU9-RFXSRLyWp3tmxb7dyvb9pCjluHkRrrGCv8O9HYea69QlSFYhprNy3NpI4EapnUJmmoicRyw2jNUGUSFGPGoTfr1FKyx0WKTalyXxzxzogfQ-vjiGphPoHRf_3noiIPSMhRUnM2aIhz4Zzukm7mbl6nzd0Ah9tUB_d1mC-qVzE1snNrQSHEa4gI0oc2AQCh0GD-hMfJ_qdf32nIyHPnhXZQgpOKibylGHkv7VGmPA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"items\": [\n    {\n      \"id\": 1,\n      \"quantity\": 1\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8002/order/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8002",
+					"path": [
+						"order",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Orders",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"followOriginalHttpMethod": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJEaW5vQ2hpZXNhLmdpdGh1Yi5pbyIsInN1YiI6IjZjYWIwNzFiLWQyNGMtNDA2Yi05ZTJmLThhYTQ1Yjc5MWJmMiIsImlhdCI6MTcwNjQ2NDY3NCwicHJvcFkiOiJrczVsbTEwZWUwODljMnl1bGM3a2tpIn0.XiDbq-Pn0H44ublgggvQw1zU_S-KLg86zqUkw6j4DtRyVNcsWoZgjub-eH6mu2w5-VBibE0IjH4MyVfGXRg2QRCUG60BuILVDw68m4n6Q3KU9-RFXSRLyWp3tmxb7dyvb9pCjluHkRrrGCv8O9HYea69QlSFYhprNy3NpI4EapnUJmmoicRyw2jNUGUSFGPGoTfr1FKyx0WKTalyXxzxzogfQ-vjiGphPoHRf_3noiIPSMhRUnM2aIhz4Zzukm7mbl6nzd0Ah9tUB_d1mC-qVzE1snNrQSHEa4gI0oc2AQCh0GD-hMfJ_qdf32nIyHPnhXZQgpOKibylGHkv7VGmPA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8002/order/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8002",
+					"path": [
+						"order",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Initialize Payment",
+			"protocolProfileBehavior": {
+				"followOriginalHttpMethod": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJEaW5vQ2hpZXNhLmdpdGh1Yi5pbyIsInN1YiI6IjZjYWIwNzFiLWQyNGMtNDA2Yi05ZTJmLThhYTQ1Yjc5MWJmMiIsImlhdCI6MTcwNjQ2NDY3NCwicHJvcFkiOiJrczVsbTEwZWUwODljMnl1bGM3a2tpIn0.XiDbq-Pn0H44ublgggvQw1zU_S-KLg86zqUkw6j4DtRyVNcsWoZgjub-eH6mu2w5-VBibE0IjH4MyVfGXRg2QRCUG60BuILVDw68m4n6Q3KU9-RFXSRLyWp3tmxb7dyvb9pCjluHkRrrGCv8O9HYea69QlSFYhprNy3NpI4EapnUJmmoicRyw2jNUGUSFGPGoTfr1FKyx0WKTalyXxzxzogfQ-vjiGphPoHRf_3noiIPSMhRUnM2aIhz4Zzukm7mbl6nzd0Ah9tUB_d1mC-qVzE1snNrQSHEa4gI0oc2AQCh0GD-hMfJ_qdf32nIyHPnhXZQgpOKibylGHkv7VGmPA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8003/payment/payments/initialize?orderId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8003",
+					"path": [
+						"payment",
+						"payments",
+						"initialize"
+					],
+					"query": [
+						{
+							"key": "orderId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Finalize Payment",
+			"protocolProfileBehavior": {
+				"followOriginalHttpMethod": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8003/payment/payments/finalize?orderId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8003",
+					"path": [
+						"payment",
+						"payments",
+						"finalize"
+					],
+					"query": [
+						{
+							"key": "orderId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Payment Status",
+			"protocolProfileBehavior": {
+				"followOriginalHttpMethod": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8003/payment/payments/status?orderId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8003",
+					"path": [
+						"payment",
+						"payments",
+						"status"
+					],
+					"query": [
+						{
+							"key": "orderId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
